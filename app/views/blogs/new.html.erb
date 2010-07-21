@@ -1,0 +1,23 @@
+<% title "來,寫篇新Blog吧"%>
+
+<% form_for(@blog) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.datetime_select :due_at %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+  
+<% end %>
+
+<%= link_to 'Back', blogs_path %>

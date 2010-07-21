@@ -1,0 +1,36 @@
+<% title "Welcome to Firefly Blog"%>
+Your IP address is <%= @client_ip %>  
+
+<% @blogs.each do |blog| %>
+  <ul class="mm">
+    <h3><%=h blog.name %></h3>
+    <li><%= truncate blog.body,:length => 250,:omission => "……#{link_to '全文',blog}"  %></li>
+    <li><%= link_to 'Show', blog %> ||
+    <%= link_to 'Edit', edit_blog_path(blog) %> ||
+    <%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></li>
+  </ul>
+<% end %>
+
+<hr>
+
+<p>---------淫蕩的分割線------------看你妹啊-------------------------------</p>
+
+ <% @blogs.in_groups_of(1) do |row_table|%>
+  <ul class= 'gg'>
+   <% for blog in row_table %>
+     <li><%= link_to blog.name, blog %></li>
+     <br />
+   <% end %>
+  </ul>
+ <% end %>
+
+
+<br />
+<%= link_to '增加一篇Blog', new_blog_path %>
+
+<hr>
+
+
+
+
+

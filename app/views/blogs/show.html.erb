@@ -1,0 +1,14 @@
+<% title "#{@blog.name}"%>
+<p>
+  <b>Name:</b>
+  <%=h @blog.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @blog.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
