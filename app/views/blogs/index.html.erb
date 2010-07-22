@@ -4,6 +4,7 @@ Your IP address is <%= @client_ip %>
 <% @blogs.each do |blog| %>
   <ul class="mm">
     <h3><%=h blog.name %></h3>
+    <li>發布于<%= blog.due_at %></li>
     <li><%= truncate blog.body,:length => 250,:omission => "……#{link_to '全文',blog}"  %></li>
     <li><%= link_to 'Show', blog %> ||
     <%= link_to 'Edit', edit_blog_path(blog) %> ||
